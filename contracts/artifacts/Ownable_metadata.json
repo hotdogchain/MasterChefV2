@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.6.12+commit.27d51765"
+		"version": "0.8.4+commit.c7e474f2"
 	},
 	"language": "Solidity",
 	"output": {
@@ -85,7 +85,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Users/leilei/Downloads/MasterChefV2/contracts/MasterChefV1.sol": "Ownable"
+			"Users/leilei/Downloads/MasterChefV2/contracts/PancakeSwapLottery.sol": "Ownable"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -99,11 +99,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"Users/leilei/Downloads/MasterChefV2/contracts/MasterChefV1.sol": {
-			"keccak256": "0xbd30fe85dfbb6133e44238ffee8b170733fc70d8e88a51602427d7bb34ce376d",
+		"Users/leilei/Downloads/MasterChefV2/contracts/PancakeSwapLottery.sol": {
+			"keccak256": "0x796769651b1a646b7549f520045bb86a891e399341e0504b3938bc941ab29ac4",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://ebd000a28161e50289407f450c17c5a00b6b7ae91c65376419d68ec669fad503",
-				"dweb:/ipfs/QmQTkWX3YfdBwqfYBLHdsq3fFbM5GaBQ6tsQpsrmKKKh4i"
+				"bzz-raw://dfed1478b0aa99052f7b97ab8c491b1e2a877e0f6767c782daad1d526f251acb",
+				"dweb:/ipfs/QmdrWBQREAFTG2GMCbxdTwfaYSW3gLfmu4r8zTErN8Dve8"
 			]
 		}
 	},

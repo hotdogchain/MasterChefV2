@@ -1,0 +1,47 @@
+{
+	"compiler": {
+		"version": "0.8.4+commit.c7e474f2"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"details": "Wrappers around ERC20 operations that throw on failure (when the token contract returns false). Tokens that return no value (and instead revert or throw on failure) are also supported, non-reverting calls are assumed to be successful. To use this library you can add a `using SafeERC20 for IERC20;` statement to your contract, which allows you to call the safe operations as `token.safeTransfer(...)`, etc.",
+			"kind": "dev",
+			"methods": {},
+			"title": "SafeERC20",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Users/leilei/Downloads/MasterChefV2/contracts/PancakeSwapLottery.sol": "SafeERC20"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Users/leilei/Downloads/MasterChefV2/contracts/PancakeSwapLottery.sol": {
+			"keccak256": "0x796769651b1a646b7549f520045bb86a891e399341e0504b3938bc941ab29ac4",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://dfed1478b0aa99052f7b97ab8c491b1e2a877e0f6767c782daad1d526f251acb",
+				"dweb:/ipfs/QmdrWBQREAFTG2GMCbxdTwfaYSW3gLfmu4r8zTErN8Dve8"
+			]
+		}
+	},
+	"version": 1
+}
