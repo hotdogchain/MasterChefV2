@@ -293,7 +293,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Users/leilei/Downloads/MasterChefV2/contracts/CakeToken.sol": "IBEP20"
+			"Users/leilei/Downloads/MasterChefV2/contracts/SousChef.sol": "IBEP20"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -307,11 +307,11 @@
 		"remappings": []
 	},
 	"sources": {
-		"Users/leilei/Downloads/MasterChefV2/contracts/CakeToken.sol": {
-			"keccak256": "0xab2dc015b9c78dd12ce634eb6708b41740a87dcd37cb635a44ec5ad2458e6458",
+		"Users/leilei/Downloads/MasterChefV2/contracts/SousChef.sol": {
+			"keccak256": "0x66d2c06d73c00e170a8d23e1e26deb1f6f2356f0eeb010891cd102746b6ad457",
 			"urls": [
-				"bzz-raw://c73667111ef80ef8d5e3b160c947f503bbb32ad3092c431af8be0e5f85220b09",
-				"dweb:/ipfs/QmWkXyjiK9LsrnoYBdZ87RhNyeUe7zPpk8DorqGpSJCqrz"
+				"bzz-raw://1d4a361d946a893a9225a0a8041afc5c3e761dfb83557d6e6d182f656110ce7e",
+				"dweb:/ipfs/QmbydBEgcyJVUsWJNzwTf76VbAMD6h9GW3U8UwUmF35S7j"
 			]
 		}
 	},
