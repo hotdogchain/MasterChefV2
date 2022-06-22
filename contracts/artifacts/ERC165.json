@@ -44,9 +44,7 @@
 		},
 		"gasEstimates": null,
 		"methodIdentifiers": {
-			"owner()": "8da5cb5b",
-			"renounceOwnership()": "715018a6",
-			"transferOwnership(address)": "f2fde38b"
+			"supportsInterface(bytes4)": "01ffc9a7"
 		}
 	},
 	"abi": [
@@ -56,55 +54,22 @@
 			"type": "constructor"
 		},
 		{
-			"anonymous": false,
 			"inputs": [
 				{
-					"indexed": true,
-					"internalType": "address",
-					"name": "previousOwner",
-					"type": "address"
-				},
-				{
-					"indexed": true,
-					"internalType": "address",
-					"name": "newOwner",
-					"type": "address"
+					"internalType": "bytes4",
+					"name": "interfaceId",
+					"type": "bytes4"
 				}
 			],
-			"name": "OwnershipTransferred",
-			"type": "event"
-		},
-		{
-			"inputs": [],
-			"name": "owner",
+			"name": "supportsInterface",
 			"outputs": [
 				{
-					"internalType": "address",
+					"internalType": "bool",
 					"name": "",
-					"type": "address"
+					"type": "bool"
 				}
 			],
 			"stateMutability": "view",
-			"type": "function"
-		},
-		{
-			"inputs": [],
-			"name": "renounceOwnership",
-			"outputs": [],
-			"stateMutability": "nonpayable",
-			"type": "function"
-		},
-		{
-			"inputs": [
-				{
-					"internalType": "address",
-					"name": "newOwner",
-					"type": "address"
-				}
-			],
-			"name": "transferOwnership",
-			"outputs": [],
-			"stateMutability": "nonpayable",
 			"type": "function"
 		}
 	]

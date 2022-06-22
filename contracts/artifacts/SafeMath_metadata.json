@@ -15,7 +15,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Users/leilei/Downloads/MasterChefV2/contracts/PancakeProfile.sol": "SafeMath"
+			"Users/leilei/Downloads/MasterChefV2/contracts/PancakeBunnies.sol": "SafeMath"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -29,11 +29,11 @@
 		"remappings": []
 	},
 	"sources": {
-		"Users/leilei/Downloads/MasterChefV2/contracts/PancakeProfile.sol": {
-			"keccak256": "0xf31e4573fb10e3e61b167a4c330b304f203a67db691c756e767cc339ea8ee027",
+		"Users/leilei/Downloads/MasterChefV2/contracts/PancakeBunnies.sol": {
+			"keccak256": "0xe969674d236f2563d51e6ffed507dfcb0504f41002b6a4bd7637e3bf3438f9a6",
 			"urls": [
-				"bzz-raw://6c51c650151db066455dcb3a5c212f77b3a2785f90c1e6d6f54bf03d9250d8aa",
-				"dweb:/ipfs/QmdL7Na8fVGBH4vs6yov4L9D3rEsd1SuLjQrGahEWrXv8E"
+				"bzz-raw://14b56a074d3ff9558a1834b958701fe13e8dd42eb89f2a6f700c66b94478112f",
+				"dweb:/ipfs/QmUxr7tceZ9SdsZNRKJVfXSZywV6asaCbzcp2zbzg5QXMo"
 			]
 		}
 	},

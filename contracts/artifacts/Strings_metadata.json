@@ -6,7 +6,7 @@
 	"output": {
 		"abi": [],
 		"devdoc": {
-			"details": "Collection of functions related to the address type",
+			"details": "String operations.",
 			"methods": {}
 		},
 		"userdoc": {
@@ -15,7 +15,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Users/leilei/Downloads/MasterChefV2/contracts/PancakeBunnies.sol": "Address"
+			"Users/leilei/Downloads/MasterChefV2/contracts/PancakeBunnies.sol": "Strings"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
