@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.6.4+commit.1dca32f3"
+		"version": "0.6.12+commit.27d51765"
 	},
 	"language": "Solidity",
 	"output": {
@@ -423,6 +423,7 @@
 		],
 		"devdoc": {
 			"details": "see https://eips.ethereum.org/EIPS/eip-721",
+			"kind": "dev",
 			"methods": {
 				"approve(address,uint256)": {
 					"details": "See {IERC721-approve}."
@@ -458,7 +459,7 @@
 					"details": "See {IERC721-setApprovalForAll}."
 				},
 				"supportsInterface(bytes4)": {
-					"details": "See {IERC165-supportsInterface}.     * Time complexity O(1), guaranteed to always use less than 30 000 gas."
+					"details": "See {IERC165-supportsInterface}. Time complexity O(1), guaranteed to always use less than 30 000 gas."
 				},
 				"symbol()": {
 					"details": "See {IERC721Metadata-symbol}."
@@ -479,15 +480,18 @@
 					"details": "See {IERC721-transferFrom}."
 				}
 			},
-			"title": "ERC721 Non-Fungible Token Standard basic implementation"
+			"title": "ERC721 Non-Fungible Token Standard basic implementation",
+			"version": 1
 		},
 		"userdoc": {
-			"methods": {}
+			"kind": "user",
+			"methods": {},
+			"version": 1
 		}
 	},
 	"settings": {
 		"compilationTarget": {
-			"Users/leilei/Downloads/MasterChefV2/contracts/PancakeBunnies.sol": "ERC721"
+			"Users/leilei/Downloads/MasterChefV2/contracts/BunnyFactoryV3.sol": "ERC721"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -501,11 +505,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"Users/leilei/Downloads/MasterChefV2/contracts/PancakeBunnies.sol": {
-			"keccak256": "0xe969674d236f2563d51e6ffed507dfcb0504f41002b6a4bd7637e3bf3438f9a6",
+		"Users/leilei/Downloads/MasterChefV2/contracts/BunnyFactoryV3.sol": {
+			"keccak256": "0xe9760ca0cf650483d0d8619a3bced861a5376fba643ca8ecc79af05f43b35e2d",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://14b56a074d3ff9558a1834b958701fe13e8dd42eb89f2a6f700c66b94478112f",
-				"dweb:/ipfs/QmUxr7tceZ9SdsZNRKJVfXSZywV6asaCbzcp2zbzg5QXMo"
+				"bzz-raw://5da0b10358a704e6b2089b6d989c9c65eb20d46eac9013a8fb757300a99d505b",
+				"dweb:/ipfs/QmenY4fVNth8vYm8KrUWnYbW2norguT4kh58MP4WcG8NQK"
 			]
 		}
 	},

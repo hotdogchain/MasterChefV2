@@ -1,15 +1,10 @@
 {
 	"compiler": {
-		"version": "0.6.4+commit.1dca32f3"
+		"version": "0.6.12+commit.27d51765"
 	},
 	"language": "Solidity",
 	"output": {
 		"abi": [
-			{
-				"inputs": [],
-				"stateMutability": "nonpayable",
-				"type": "constructor"
-			},
 			{
 				"inputs": [
 					{
@@ -31,20 +26,29 @@
 			}
 		],
 		"devdoc": {
-			"details": "Implementation of the {IERC165} interface. * Contracts may inherit from this and call {_registerInterface} to declare their support of an interface.",
+			"details": "Implementation of the {IERC165} interface. Contracts may inherit from this and call {_registerInterface} to declare their support of an interface.",
+			"kind": "dev",
 			"methods": {
 				"supportsInterface(bytes4)": {
-					"details": "See {IERC165-supportsInterface}.     * Time complexity O(1), guaranteed to always use less than 30 000 gas."
+					"details": "See {IERC165-supportsInterface}. Time complexity O(1), guaranteed to always use less than 30 000 gas."
 				}
-			}
+			},
+			"stateVariables": {
+				"_supportedInterfaces": {
+					"details": "Mapping of interface ids to whether or not it's supported."
+				}
+			},
+			"version": 1
 		},
 		"userdoc": {
-			"methods": {}
+			"kind": "user",
+			"methods": {},
+			"version": 1
 		}
 	},
 	"settings": {
 		"compilationTarget": {
-			"Users/leilei/Downloads/MasterChefV2/contracts/PancakeBunnies.sol": "ERC165"
+			"Users/leilei/Downloads/MasterChefV2/contracts/BunnyFactoryV3.sol": "ERC165"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -58,11 +62,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"Users/leilei/Downloads/MasterChefV2/contracts/PancakeBunnies.sol": {
-			"keccak256": "0xe969674d236f2563d51e6ffed507dfcb0504f41002b6a4bd7637e3bf3438f9a6",
+		"Users/leilei/Downloads/MasterChefV2/contracts/BunnyFactoryV3.sol": {
+			"keccak256": "0xe9760ca0cf650483d0d8619a3bced861a5376fba643ca8ecc79af05f43b35e2d",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://14b56a074d3ff9558a1834b958701fe13e8dd42eb89f2a6f700c66b94478112f",
-				"dweb:/ipfs/QmUxr7tceZ9SdsZNRKJVfXSZywV6asaCbzcp2zbzg5QXMo"
+				"bzz-raw://5da0b10358a704e6b2089b6d989c9c65eb20d46eac9013a8fb757300a99d505b",
+				"dweb:/ipfs/QmenY4fVNth8vYm8KrUWnYbW2norguT4kh58MP4WcG8NQK"
 			]
 		}
 	},

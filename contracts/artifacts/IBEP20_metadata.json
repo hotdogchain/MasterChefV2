@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.6.4+commit.1dca32f3"
+		"version": "0.6.12+commit.27d51765"
 	},
 	"language": "Solidity",
 	"output": {
@@ -242,12 +242,21 @@
 			}
 		],
 		"devdoc": {
+			"events": {
+				"Approval(address,address,uint256)": {
+					"details": "Emitted when the allowance of a `spender` for an `owner` is set by a call to {approve}. `value` is the new allowance."
+				},
+				"Transfer(address,address,uint256)": {
+					"details": "Emitted when `value` tokens are moved from one account (`from`) to another (`to`). Note that `value` may be zero."
+				}
+			},
+			"kind": "dev",
 			"methods": {
 				"allowance(address,address)": {
-					"details": "Returns the remaining number of tokens that `spender` will be allowed to spend on behalf of `owner` through {transferFrom}. This is zero by default.     * This value changes when {approve} or {transferFrom} are called."
+					"details": "Returns the remaining number of tokens that `spender` will be allowed to spend on behalf of `owner` through {transferFrom}. This is zero by default. This value changes when {approve} or {transferFrom} are called."
 				},
 				"approve(address,uint256)": {
-					"details": "Sets `amount` as the allowance of `spender` over the caller's tokens.     * Returns a boolean value indicating whether the operation succeeded.     * IMPORTANT: Beware that changing an allowance with this method brings the risk that someone may use both the old and the new allowance by unfortunate transaction ordering. One possible solution to mitigate this race condition is to first reduce the spender's allowance to 0 and set the desired value afterwards: https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729     * Emits an {Approval} event."
+					"details": "Sets `amount` as the allowance of `spender` over the caller's tokens. Returns a boolean value indicating whether the operation succeeded. IMPORTANT: Beware that changing an allowance with this method brings the risk that someone may use both the old and the new allowance by unfortunate transaction ordering. One possible solution to mitigate this race condition is to first reduce the spender's allowance to 0 and set the desired value afterwards: https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729 Emits an {Approval} event."
 				},
 				"balanceOf(address)": {
 					"details": "Returns the amount of tokens owned by `account`."
@@ -268,20 +277,23 @@
 					"details": "Returns the amount of tokens in existence."
 				},
 				"transfer(address,uint256)": {
-					"details": "Moves `amount` tokens from the caller's account to `recipient`.     * Returns a boolean value indicating whether the operation succeeded.     * Emits a {Transfer} event."
+					"details": "Moves `amount` tokens from the caller's account to `recipient`. Returns a boolean value indicating whether the operation succeeded. Emits a {Transfer} event."
 				},
 				"transferFrom(address,address,uint256)": {
-					"details": "Moves `amount` tokens from `sender` to `recipient` using the allowance mechanism. `amount` is then deducted from the caller's allowance.     * Returns a boolean value indicating whether the operation succeeded.     * Emits a {Transfer} event."
+					"details": "Moves `amount` tokens from `sender` to `recipient` using the allowance mechanism. `amount` is then deducted from the caller's allowance. Returns a boolean value indicating whether the operation succeeded. Emits a {Transfer} event."
 				}
-			}
+			},
+			"version": 1
 		},
 		"userdoc": {
-			"methods": {}
+			"kind": "user",
+			"methods": {},
+			"version": 1
 		}
 	},
 	"settings": {
 		"compilationTarget": {
-			"Users/leilei/Downloads/MasterChefV2/contracts/PancakeProfile.sol": "IBEP20"
+			"Users/leilei/Downloads/MasterChefV2/contracts/BunnyFactoryV3.sol": "IBEP20"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -295,11 +307,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"Users/leilei/Downloads/MasterChefV2/contracts/PancakeProfile.sol": {
-			"keccak256": "0xf31e4573fb10e3e61b167a4c330b304f203a67db691c756e767cc339ea8ee027",
+		"Users/leilei/Downloads/MasterChefV2/contracts/BunnyFactoryV3.sol": {
+			"keccak256": "0xe9760ca0cf650483d0d8619a3bced861a5376fba643ca8ecc79af05f43b35e2d",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://6c51c650151db066455dcb3a5c212f77b3a2785f90c1e6d6f54bf03d9250d8aa",
-				"dweb:/ipfs/QmdL7Na8fVGBH4vs6yov4L9D3rEsd1SuLjQrGahEWrXv8E"
+				"bzz-raw://5da0b10358a704e6b2089b6d989c9c65eb20d46eac9013a8fb757300a99d505b",
+				"dweb:/ipfs/QmenY4fVNth8vYm8KrUWnYbW2norguT4kh58MP4WcG8NQK"
 			]
 		}
 	},

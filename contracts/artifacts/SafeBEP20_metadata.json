@@ -1,22 +1,26 @@
 {
 	"compiler": {
-		"version": "0.6.4+commit.1dca32f3"
+		"version": "0.6.12+commit.27d51765"
 	},
 	"language": "Solidity",
 	"output": {
 		"abi": [],
 		"devdoc": {
 			"details": "Wrappers around BEP20 operations that throw on failure (when the token contract returns false). Tokens that return no value (and instead revert or throw on failure) are also supported, non-reverting calls are assumed to be successful. To use this library you can add a `using SafeBEP20 for IBEP20;` statement to your contract, which allows you to call the safe operations as `token.safeTransfer(...)`, etc.",
+			"kind": "dev",
 			"methods": {},
-			"title": "SafeBEP20"
+			"title": "SafeBEP20",
+			"version": 1
 		},
 		"userdoc": {
-			"methods": {}
+			"kind": "user",
+			"methods": {},
+			"version": 1
 		}
 	},
 	"settings": {
 		"compilationTarget": {
-			"Users/leilei/Downloads/MasterChefV2/contracts/PancakeProfile.sol": "SafeBEP20"
+			"Users/leilei/Downloads/MasterChefV2/contracts/BunnyFactoryV3.sol": "SafeBEP20"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -30,11 +34,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"Users/leilei/Downloads/MasterChefV2/contracts/PancakeProfile.sol": {
-			"keccak256": "0xf31e4573fb10e3e61b167a4c330b304f203a67db691c756e767cc339ea8ee027",
+		"Users/leilei/Downloads/MasterChefV2/contracts/BunnyFactoryV3.sol": {
+			"keccak256": "0xe9760ca0cf650483d0d8619a3bced861a5376fba643ca8ecc79af05f43b35e2d",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://6c51c650151db066455dcb3a5c212f77b3a2785f90c1e6d6f54bf03d9250d8aa",
-				"dweb:/ipfs/QmdL7Na8fVGBH4vs6yov4L9D3rEsd1SuLjQrGahEWrXv8E"
+				"bzz-raw://5da0b10358a704e6b2089b6d989c9c65eb20d46eac9013a8fb757300a99d505b",
+				"dweb:/ipfs/QmenY4fVNth8vYm8KrUWnYbW2norguT4kh58MP4WcG8NQK"
 			]
 		}
 	},

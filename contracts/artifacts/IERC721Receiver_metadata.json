@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.6.4+commit.1dca32f3"
+		"version": "0.6.12+commit.27d51765"
 	},
 	"language": "Solidity",
 	"output": {
@@ -42,20 +42,24 @@
 		],
 		"devdoc": {
 			"details": "Interface for any contract that wants to support safeTransfers from ERC721 asset contracts.",
+			"kind": "dev",
 			"methods": {
 				"onERC721Received(address,address,uint256,bytes)": {
-					"details": "Whenever an {IERC721} `tokenId` token is transferred to this contract via {IERC721-safeTransferFrom} by `operator` from `from`, this function is called.     * It must return its Solidity selector to confirm the token transfer. If any other value is returned or the interface is not implemented by the recipient, the transfer will be reverted.     * The selector can be obtained in Solidity with `IERC721.onERC721Received.selector`."
+					"details": "Whenever an {IERC721} `tokenId` token is transferred to this contract via {IERC721-safeTransferFrom} by `operator` from `from`, this function is called. It must return its Solidity selector to confirm the token transfer. If any other value is returned or the interface is not implemented by the recipient, the transfer will be reverted. The selector can be obtained in Solidity with `IERC721.onERC721Received.selector`."
 				}
 			},
-			"title": "ERC721 token receiver interface"
+			"title": "ERC721 token receiver interface",
+			"version": 1
 		},
 		"userdoc": {
-			"methods": {}
+			"kind": "user",
+			"methods": {},
+			"version": 1
 		}
 	},
 	"settings": {
 		"compilationTarget": {
-			"Users/leilei/Downloads/MasterChefV2/contracts/PancakeBunnies.sol": "IERC721Receiver"
+			"Users/leilei/Downloads/MasterChefV2/contracts/BunnyFactoryV3.sol": "IERC721Receiver"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -69,11 +73,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"Users/leilei/Downloads/MasterChefV2/contracts/PancakeBunnies.sol": {
-			"keccak256": "0xe969674d236f2563d51e6ffed507dfcb0504f41002b6a4bd7637e3bf3438f9a6",
+		"Users/leilei/Downloads/MasterChefV2/contracts/BunnyFactoryV3.sol": {
+			"keccak256": "0xe9760ca0cf650483d0d8619a3bced861a5376fba643ca8ecc79af05f43b35e2d",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://14b56a074d3ff9558a1834b958701fe13e8dd42eb89f2a6f700c66b94478112f",
-				"dweb:/ipfs/QmUxr7tceZ9SdsZNRKJVfXSZywV6asaCbzcp2zbzg5QXMo"
+				"bzz-raw://5da0b10358a704e6b2089b6d989c9c65eb20d46eac9013a8fb757300a99d505b",
+				"dweb:/ipfs/QmenY4fVNth8vYm8KrUWnYbW2norguT4kh58MP4WcG8NQK"
 			]
 		}
 	},
