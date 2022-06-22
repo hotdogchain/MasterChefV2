@@ -19,7 +19,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Users/leilei/Downloads/MasterChefV2/Address.sol": "Address"
+			"Users/leilei/Downloads/MasterChefV2/MasterChef.sol": "Address"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -33,12 +33,11 @@
 		"remappings": []
 	},
 	"sources": {
-		"Users/leilei/Downloads/MasterChefV2/Address.sol": {
-			"keccak256": "0x42b040c5389fef91ea8637793e754d7c059a718275c9c12d6e21204b2a9b46e2",
-			"license": "MIT",
+		"Users/leilei/Downloads/MasterChefV2/MasterChef.sol": {
+			"keccak256": "0xbd30fe85dfbb6133e44238ffee8b170733fc70d8e88a51602427d7bb34ce376d",
 			"urls": [
-				"bzz-raw://d192b621b224665760aa1ac8e9ac75c576f1f0480c889001eadd9c56b742928d",
-				"dweb:/ipfs/QmfZbQkahUYPjhKXMLjKQmqcTN7hWR8GiHqNqXCy7t43Tv"
+				"bzz-raw://ebd000a28161e50289407f450c17c5a00b6b7ae91c65376419d68ec669fad503",
+				"dweb:/ipfs/QmQTkWX3YfdBwqfYBLHdsq3fFbM5GaBQ6tsQpsrmKKKh4i"
 			]
 		}
 	},

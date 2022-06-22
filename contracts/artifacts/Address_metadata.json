@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.6.12+commit.27d51765"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"details": "Collection of functions related to the address type",
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Users/leilei/Downloads/MasterChefV2/contracts/CakeToken.sol": "Address"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Users/leilei/Downloads/MasterChefV2/contracts/CakeToken.sol": {
+			"keccak256": "0xab2dc015b9c78dd12ce634eb6708b41740a87dcd37cb635a44ec5ad2458e6458",
+			"urls": [
+				"bzz-raw://c73667111ef80ef8d5e3b160c947f503bbb32ad3092c431af8be0e5f85220b09",
+				"dweb:/ipfs/QmWkXyjiK9LsrnoYBdZ87RhNyeUe7zPpk8DorqGpSJCqrz"
+			]
+		}
+	},
+	"version": 1
+}
