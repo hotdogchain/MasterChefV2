@@ -332,11 +332,11 @@
 			}
 		],
 		"devdoc": {
-			"details": "It is a contract that allow different factories to mint Pancake Collectibles/Bunnies.",
+			"details": "This contract allows different factories to mint Pancake Collectibles/Bunnies.",
 			"kind": "dev",
 			"methods": {
 				"changeOwnershipNFTContract(address)": {
-					"details": "It transfers the ownership of the NFT contract to a new address. Only the main admins can set it."
+					"details": "It transfers the ownership of the NFT contract to a new address.Only the main admins can set it."
 				},
 				"getRoleAdmin(bytes32)": {
 					"details": "Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}."
@@ -353,9 +353,6 @@
 				"hasRole(bytes32,address)": {
 					"details": "Returns `true` if `account` has been granted `role`."
 				},
-				"mintCollectible(address,string,uint8)": {
-					"details": "Mint NFTs from the PancakeBunnies contract."
-				},
 				"renounceRole(bytes32,address)": {
 					"details": "Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`."
 				},
@@ -363,7 +360,7 @@
 					"details": "Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role."
 				},
 				"setBunnyName(uint8,string)": {
-					"details": "Set up names for bunnies. Only the main admins can set it."
+					"details": "Only the main admins can set it."
 				}
 			},
 			"title": "BunnyMintingStation.",
@@ -371,13 +368,20 @@
 		},
 		"userdoc": {
 			"kind": "user",
-			"methods": {},
+			"methods": {
+				"mintCollectible(address,string,uint8)": {
+					"notice": "Mint NFTs from the PancakeBunnies contract. Users can specify what bunnyId they want to mint. Users can claim once. There is a limit on how many are distributed. It requires CAKE balance to be > 0."
+				},
+				"setBunnyName(uint8,string)": {
+					"notice": "Set up names for bunnies."
+				}
+			},
 			"version": 1
 		}
 	},
 	"settings": {
 		"compilationTarget": {
-			"Users/leilei/Downloads/MasterChefV2/contracts/BunnyFactoryV3.sol": "BunnyMintingStation"
+			"Users/leilei/Downloads/MasterChefV2/contracts/TradingCompV1.sol": "BunnyMintingStation"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -391,12 +395,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"Users/leilei/Downloads/MasterChefV2/contracts/BunnyFactoryV3.sol": {
-			"keccak256": "0xe9760ca0cf650483d0d8619a3bced861a5376fba643ca8ecc79af05f43b35e2d",
+		"Users/leilei/Downloads/MasterChefV2/contracts/TradingCompV1.sol": {
+			"keccak256": "0x91aedbf141697f1d112f95ab6319a9af9ee8800d221946955e4f239154f71d5d",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://5da0b10358a704e6b2089b6d989c9c65eb20d46eac9013a8fb757300a99d505b",
-				"dweb:/ipfs/QmenY4fVNth8vYm8KrUWnYbW2norguT4kh58MP4WcG8NQK"
+				"bzz-raw://4bcb628009e1cbb4d85e2280efe93e447765ed180302fa94143a22628cc26369",
+				"dweb:/ipfs/QmRYVBXPUeBGGiEFEp1D6LUoSvksyop7RL33TwDuM9Cbuj"
 			]
 		}
 	},

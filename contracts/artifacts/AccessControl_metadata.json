@@ -281,7 +281,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Users/leilei/Downloads/MasterChefV2/contracts/BunnyFactoryV3.sol": "AccessControl"
+			"Users/leilei/Downloads/MasterChefV2/contracts/TradingCompV1.sol": "AccessControl"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -295,12 +295,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"Users/leilei/Downloads/MasterChefV2/contracts/BunnyFactoryV3.sol": {
-			"keccak256": "0xe9760ca0cf650483d0d8619a3bced861a5376fba643ca8ecc79af05f43b35e2d",
+		"Users/leilei/Downloads/MasterChefV2/contracts/TradingCompV1.sol": {
+			"keccak256": "0x91aedbf141697f1d112f95ab6319a9af9ee8800d221946955e4f239154f71d5d",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://5da0b10358a704e6b2089b6d989c9c65eb20d46eac9013a8fb757300a99d505b",
-				"dweb:/ipfs/QmenY4fVNth8vYm8KrUWnYbW2norguT4kh58MP4WcG8NQK"
+				"bzz-raw://4bcb628009e1cbb4d85e2280efe93e447765ed180302fa94143a22628cc26369",
+				"dweb:/ipfs/QmRYVBXPUeBGGiEFEp1D6LUoSvksyop7RL33TwDuM9Cbuj"
 			]
 		}
 	},

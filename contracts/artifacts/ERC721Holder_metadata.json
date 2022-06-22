@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.6.4+commit.1dca32f3"
+		"version": "0.6.12+commit.27d51765"
 	},
 	"language": "Solidity",
 	"output": {
@@ -41,20 +41,24 @@
 			}
 		],
 		"devdoc": {
-			"details": "Implementation of the {IERC721Receiver} interface. * Accepts all token transfers. Make sure the contract is able to use its token with {IERC721-safeTransferFrom}, {IERC721-approve} or {IERC721-setApprovalForAll}.",
+			"details": "Implementation of the {IERC721Receiver} interface. Accepts all token transfers. Make sure the contract is able to use its token with {IERC721-safeTransferFrom}, {IERC721-approve} or {IERC721-setApprovalForAll}.",
+			"kind": "dev",
 			"methods": {
 				"onERC721Received(address,address,uint256,bytes)": {
-					"details": "See {IERC721Receiver-onERC721Received}.     * Always returns `IERC721Receiver.onERC721Received.selector`."
+					"details": "See {IERC721Receiver-onERC721Received}. Always returns `IERC721Receiver.onERC721Received.selector`."
 				}
-			}
+			},
+			"version": 1
 		},
 		"userdoc": {
-			"methods": {}
+			"kind": "user",
+			"methods": {},
+			"version": 1
 		}
 	},
 	"settings": {
 		"compilationTarget": {
-			"Users/leilei/Downloads/MasterChefV2/contracts/PancakeProfile.sol": "ERC721Holder"
+			"Users/leilei/Downloads/MasterChefV2/contracts/BunnySpecialV1.sol": "ERC721Holder"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -68,11 +72,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"Users/leilei/Downloads/MasterChefV2/contracts/PancakeProfile.sol": {
-			"keccak256": "0xf31e4573fb10e3e61b167a4c330b304f203a67db691c756e767cc339ea8ee027",
+		"Users/leilei/Downloads/MasterChefV2/contracts/BunnySpecialV1.sol": {
+			"keccak256": "0x0180d6aa6d9a57c6611e3cff88900a7e9eae0b07baad833c05ba735f0581a0b6",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://6c51c650151db066455dcb3a5c212f77b3a2785f90c1e6d6f54bf03d9250d8aa",
-				"dweb:/ipfs/QmdL7Na8fVGBH4vs6yov4L9D3rEsd1SuLjQrGahEWrXv8E"
+				"bzz-raw://89bd406a506c97daed0da6257ec02c4eea482d11b2358504cd50006e7304f79d",
+				"dweb:/ipfs/QmYjtSHsNkiAmnrVpoNdR9NzRNMoC1iHjA2Q6v9ad8Muu7"
 			]
 		}
 	},

@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.6.4+commit.1dca32f3"
+		"version": "0.6.12+commit.27d51765"
 	},
 	"language": "Solidity",
 	"output": {
@@ -1082,6 +1082,7 @@
 		],
 		"devdoc": {
 			"details": "It is a contract for users to bind their address  to a customizable profile by depositing a NFT.",
+			"kind": "dev",
 			"methods": {
 				"addNftAddress(address)": {
 					"details": "To add a NFT contract address for users to set their profile. Callable only by owner admins."
@@ -1099,10 +1100,10 @@
 					"details": "To create a user profile. It sends the NFT to the contract and sends CAKE to burn address. Requires 2 token approvals."
 				},
 				"getRoleAdmin(bytes32)": {
-					"details": "Returns the admin role that controls `role`. See {grantRole} and {revokeRole}.     * To change a role's admin, use {_setRoleAdmin}."
+					"details": "Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}."
 				},
 				"getRoleMember(bytes32,uint256)": {
-					"details": "Returns one of the accounts that have `role`. `index` must be a value between 0 and {getRoleMemberCount}, non-inclusive.     * Role bearers are not sorted in any particular way, and their ordering may change at any point.     * WARNING: When using {getRoleMember} and {getRoleMemberCount}, make sure you perform all queries on the same block. See the following https://forum.openzeppelin.com/t/iterating-over-elements-on-enumerableset-in-openzeppelin-contracts/2296[forum post] for more information."
+					"details": "Returns one of the accounts that have `role`. `index` must be a value between 0 and {getRoleMemberCount}, non-inclusive. Role bearers are not sorted in any particular way, and their ordering may change at any point. WARNING: When using {getRoleMember} and {getRoleMemberCount}, make sure you perform all queries on the same block. See the following https://forum.openzeppelin.com/t/iterating-over-elements-on-enumerableset-in-openzeppelin-contracts/2296[forum post] for more information."
 				},
 				"getRoleMemberCount(bytes32)": {
 					"details": "Returns the number of accounts that have `role`. Can be used together with {getRoleMember} to enumerate all bearers of a role."
@@ -1117,7 +1118,7 @@
 					"details": "Check the user's status for a given address"
 				},
 				"grantRole(bytes32,address)": {
-					"details": "Grants `role` to `account`.     * If `account` had not been already granted `role`, emits a {RoleGranted} event.     * Requirements:     * - the caller must have ``role``'s admin role."
+					"details": "Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role."
 				},
 				"hasRole(bytes32,address)": {
 					"details": "Returns `true` if `account` has been granted `role`."
@@ -1138,7 +1139,7 @@
 					"details": "Make a team not joinable. Callable only by owner admins."
 				},
 				"onERC721Received(address,address,uint256,bytes)": {
-					"details": "See {IERC721Receiver-onERC721Received}.     * Always returns `IERC721Receiver.onERC721Received.selector`."
+					"details": "See {IERC721Receiver-onERC721Received}. Always returns `IERC721Receiver.onERC721Received.selector`."
 				},
 				"pauseProfile()": {
 					"details": "To pause user profile. It releases the NFT. Callable only by registered users."
@@ -1159,10 +1160,10 @@
 					"details": "Rename a team Callable only by owner admins."
 				},
 				"renounceRole(bytes32,address)": {
-					"details": "Revokes `role` from the calling account.     * Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced).     * If the calling account had been granted `role`, emits a {RoleRevoked} event.     * Requirements:     * - the caller must be `account`."
+					"details": "Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`."
 				},
 				"revokeRole(bytes32,address)": {
-					"details": "Revokes `role` from `account`.     * If `account` had been granted `role`, emits a {RoleRevoked} event.     * Requirements:     * - the caller must have ``role``'s admin role."
+					"details": "Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role."
 				},
 				"updateNumberCake(uint256,uint256,uint256)": {
 					"details": "Update the number of CAKE to register Callable only by owner admins."
@@ -1171,15 +1172,18 @@
 					"details": "To update user profile. Callable only by registered users."
 				}
 			},
-			"title": "PancakeProfile."
+			"title": "PancakeProfile.",
+			"version": 1
 		},
 		"userdoc": {
-			"methods": {}
+			"kind": "user",
+			"methods": {},
+			"version": 1
 		}
 	},
 	"settings": {
 		"compilationTarget": {
-			"Users/leilei/Downloads/MasterChefV2/contracts/PancakeProfile.sol": "PancakeProfile"
+			"Users/leilei/Downloads/MasterChefV2/contracts/BunnySpecialV1.sol": "PancakeProfile"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -1193,11 +1197,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"Users/leilei/Downloads/MasterChefV2/contracts/PancakeProfile.sol": {
-			"keccak256": "0xf31e4573fb10e3e61b167a4c330b304f203a67db691c756e767cc339ea8ee027",
+		"Users/leilei/Downloads/MasterChefV2/contracts/BunnySpecialV1.sol": {
+			"keccak256": "0x0180d6aa6d9a57c6611e3cff88900a7e9eae0b07baad833c05ba735f0581a0b6",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://6c51c650151db066455dcb3a5c212f77b3a2785f90c1e6d6f54bf03d9250d8aa",
-				"dweb:/ipfs/QmdL7Na8fVGBH4vs6yov4L9D3rEsd1SuLjQrGahEWrXv8E"
+				"bzz-raw://89bd406a506c97daed0da6257ec02c4eea482d11b2358504cd50006e7304f79d",
+				"dweb:/ipfs/QmYjtSHsNkiAmnrVpoNdR9NzRNMoC1iHjA2Q6v9ad8Muu7"
 			]
 		}
 	},
