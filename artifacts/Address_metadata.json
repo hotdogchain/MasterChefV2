@@ -1,0 +1,46 @@
+{
+	"compiler": {
+		"version": "0.6.12+commit.27d51765"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"details": "Collection of functions related to the address type",
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Users/leilei/Downloads/MasterChefV2/Address.sol": "Address"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Users/leilei/Downloads/MasterChefV2/Address.sol": {
+			"keccak256": "0x42b040c5389fef91ea8637793e754d7c059a718275c9c12d6e21204b2a9b46e2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d192b621b224665760aa1ac8e9ac75c576f1f0480c889001eadd9c56b742928d",
+				"dweb:/ipfs/QmfZbQkahUYPjhKXMLjKQmqcTN7hWR8GiHqNqXCy7t43Tv"
+			]
+		}
+	},
+	"version": 1
+}

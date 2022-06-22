@@ -1,0 +1,71 @@
+{
+	"compiler": {
+		"version": "0.6.12+commit.27d51765"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"details": "Wrappers around BEP20 operations that throw on failure (when the token contract returns false). Tokens that return no value (and instead revert or throw on failure) are also supported, non-reverting calls are assumed to be successful. To use this library you can add a `using SafeBEP20 for IBEP20;` statement to your contract, which allows you to call the safe operations as `token.safeTransfer(...)`, etc.",
+			"kind": "dev",
+			"methods": {},
+			"title": "SafeBEP20",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Users/leilei/Downloads/MasterChefV2/SafeBEP20.sol": "SafeBEP20"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Users/leilei/Downloads/MasterChefV2/Address.sol": {
+			"keccak256": "0x42b040c5389fef91ea8637793e754d7c059a718275c9c12d6e21204b2a9b46e2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d192b621b224665760aa1ac8e9ac75c576f1f0480c889001eadd9c56b742928d",
+				"dweb:/ipfs/QmfZbQkahUYPjhKXMLjKQmqcTN7hWR8GiHqNqXCy7t43Tv"
+			]
+		},
+		"Users/leilei/Downloads/MasterChefV2/SafeBEP20.sol": {
+			"keccak256": "0x19f4c9cfd5591d9a128be492b1e39db85db819ebd41dac0335d8826af33e24fc",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ec73b52baad0f496f58da064772cf12d861b7e8ebc57bbdfd8443ad4df7cf2eb",
+				"dweb:/ipfs/QmVVL4DSndT6xfksxSaEqQ2dbfEFH8YkqaEScEqhbJP7R4"
+			]
+		},
+		"Users/leilei/Downloads/MasterChefV2/SafeMath.sol": {
+			"keccak256": "0x2e1df665169560627c2a0dce65572e63de974bb41c759cdeed973cd570b4d7cf",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0785d9859de8fd9d90e10e085500fd9aceebd71bbb018f7959b5bd4de5759878",
+				"dweb:/ipfs/QmPC3ockcg49rizy1DJiBErQLsH4FR7W4KRfcoxEMFAgPS"
+			]
+		},
+		"Users/leilei/Downloads/MasterChefV2/interfaces/IBEP20.sol": {
+			"keccak256": "0x21e17839b929da845c6196ac3cbdf2e7b878b916fbe05b35ad94d4c9b3f5b09e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3c10cfe172c74c4a790cd67f5afb19f218a2d669ba1ee255932499abfccf08e9",
+				"dweb:/ipfs/QmUKAgVM9isTbuqc4boAqgZss2u3UzE7UaV4AvgjSdKhog"
+			]
+		}
+	},
+	"version": 1
+}

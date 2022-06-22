@@ -1,0 +1,1382 @@
+{
+	"compiler": {
+		"version": "0.6.12+commit.27d51765"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "contract IMasterChef",
+						"name": "_MASTER_CHEF",
+						"type": "address"
+					},
+					{
+						"internalType": "contract IBEP20",
+						"name": "_CAKE",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_MASTER_PID",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_burnAdmin",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "pid",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "allocPoint",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "contract IBEP20",
+						"name": "lpToken",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "isRegular",
+						"type": "bool"
+					}
+				],
+				"name": "AddPool",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "pid",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "Deposit",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "pid",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "EmergencyWithdraw",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [],
+				"name": "Init",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "pid",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "allocPoint",
+						"type": "uint256"
+					}
+				],
+				"name": "SetPool",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "boostContract",
+						"type": "address"
+					}
+				],
+				"name": "UpdateBoostContract",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "pid",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "oldMultiplier",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newMultiplier",
+						"type": "uint256"
+					}
+				],
+				"name": "UpdateBoostMultiplier",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "oldAdmin",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newAdmin",
+						"type": "address"
+					}
+				],
+				"name": "UpdateBurnAdmin",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "burnRate",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "regularFarmRate",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "specialFarmRate",
+						"type": "uint256"
+					}
+				],
+				"name": "UpdateCakeRate",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "pid",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "lastRewardBlock",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "lpSupply",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "accCakePerShare",
+						"type": "uint256"
+					}
+				],
+				"name": "UpdatePool",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "isValid",
+						"type": "bool"
+					}
+				],
+				"name": "UpdateWhiteList",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "pid",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "Withdraw",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "ACC_CAKE_PRECISION",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "BOOST_PRECISION",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "CAKE",
+				"outputs": [
+					{
+						"internalType": "contract IBEP20",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "CAKE_RATE_TOTAL_PRECISION",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "MASTERCHEF_CAKE_PER_BLOCK",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "MASTER_CHEF",
+				"outputs": [
+					{
+						"internalType": "contract IMasterChef",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "MASTER_PID",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "MAX_BOOST_PRECISION",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_allocPoint",
+						"type": "uint256"
+					},
+					{
+						"internalType": "contract IBEP20",
+						"name": "_lpToken",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "_isRegular",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "_withUpdate",
+						"type": "bool"
+					}
+				],
+				"name": "add",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "boostContract",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "burnAdmin",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bool",
+						"name": "_withUpdate",
+						"type": "bool"
+					}
+				],
+				"name": "burnCake",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bool",
+						"name": "_isRegular",
+						"type": "bool"
+					}
+				],
+				"name": "cakePerBlock",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "cakePerBlockToBurn",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "cakeRateToBurn",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "cakeRateToRegularFarm",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "cakeRateToSpecialFarm",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_pid",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "deposit",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_pid",
+						"type": "uint256"
+					}
+				],
+				"name": "emergencyWithdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_user",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_pid",
+						"type": "uint256"
+					}
+				],
+				"name": "getBoostMultiplier",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "harvestFromMasterChef",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "contract IBEP20",
+						"name": "dummyToken",
+						"type": "address"
+					}
+				],
+				"name": "init",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "lastBurnedBlock",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "lpToken",
+				"outputs": [
+					{
+						"internalType": "contract IBEP20",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "massUpdatePools",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_pid",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_user",
+						"type": "address"
+					}
+				],
+				"name": "pendingCake",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "poolInfo",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "accCakePerShare",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "lastRewardBlock",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "allocPoint",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "totalBoostedShare",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "isRegular",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "poolLength",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "pools",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_pid",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_allocPoint",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "_withUpdate",
+						"type": "bool"
+					}
+				],
+				"name": "set",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalRegularAllocPoint",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalSpecialAllocPoint",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_newBoostContract",
+						"type": "address"
+					}
+				],
+				"name": "updateBoostContract",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_user",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_pid",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_newMultiplier",
+						"type": "uint256"
+					}
+				],
+				"name": "updateBoostMultiplier",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_newAdmin",
+						"type": "address"
+					}
+				],
+				"name": "updateBurnAdmin",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_burnRate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_regularFarmRate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_specialFarmRate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "_withUpdate",
+						"type": "bool"
+					}
+				],
+				"name": "updateCakeRate",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_pid",
+						"type": "uint256"
+					}
+				],
+				"name": "updatePool",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "accCakePerShare",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "lastRewardBlock",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "allocPoint",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "totalBoostedShare",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "isRegular",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct MasterChefV2.PoolInfo",
+						"name": "pool",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_user",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "_isValid",
+						"type": "bool"
+					}
+				],
+				"name": "updateWhiteList",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "userInfo",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "rewardDebt",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "boostMultiplier",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "whiteList",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_pid",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"add(uint256,address,bool,bool)": {
+					"params": {
+						"_allocPoint": "Number of allocation points for the new pool.",
+						"_isRegular": "Whether the pool is regular or special. LP farms are always \"regular\". \"Special\" pools are",
+						"_lpToken": "Address of the LP BEP-20 token.",
+						"_withUpdate": "Whether call \"massUpdatePools\" operation. only for CAKE distributions within PancakeSwap products."
+					}
+				},
+				"burnCake(bool)": {
+					"params": {
+						"_withUpdate": "Whether call \"massUpdatePools\" operation."
+					}
+				},
+				"cakePerBlock(bool)": {
+					"params": {
+						"_isRegular": "If the pool belongs to regular or special."
+					}
+				},
+				"constructor": {
+					"params": {
+						"_CAKE": "The CAKE token contract address.",
+						"_MASTER_CHEF": "The PancakeSwap MCV1 contract address.",
+						"_MASTER_PID": "The pool id of the dummy pool on the MCV1.",
+						"_burnAdmin": "The address of burn admin."
+					}
+				},
+				"deposit(uint256,uint256)": {
+					"params": {
+						"_amount": "Amount of LP tokens to deposit.",
+						"_pid": "The id of the pool. See `poolInfo`."
+					}
+				},
+				"emergencyWithdraw(uint256)": {
+					"params": {
+						"_pid": "The id of the pool. See `poolInfo`."
+					}
+				},
+				"getBoostMultiplier(address,uint256)": {
+					"params": {
+						"_pid": "The pool id.",
+						"_user": "The user address."
+					}
+				},
+				"init(address)": {
+					"params": {
+						"dummyToken": "The address of the BEP-20 token to be deposited into MCV1."
+					}
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"pendingCake(uint256,address)": {
+					"params": {
+						"_pid": "The id of the pool. See `poolInfo`.",
+						"_user": "Address of the user."
+					}
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+				},
+				"set(uint256,uint256,bool)": {
+					"params": {
+						"_allocPoint": "New number of allocation points for the pool.",
+						"_pid": "The id of the pool. See `poolInfo`.",
+						"_withUpdate": "Whether call \"massUpdatePools\" operation."
+					}
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				},
+				"updateBoostContract(address)": {
+					"params": {
+						"_newBoostContract": "The new address for handling all the share boosts."
+					}
+				},
+				"updateBoostMultiplier(address,uint256,uint256)": {
+					"params": {
+						"_newMultiplier": "New boost multiplier.",
+						"_pid": "The pool id for the boost factor updates.",
+						"_user": "The user address for boost factor updates."
+					}
+				},
+				"updateBurnAdmin(address)": {
+					"params": {
+						"_newAdmin": "The new burn admin address."
+					}
+				},
+				"updateCakeRate(uint256,uint256,uint256,bool)": {
+					"params": {
+						"_burnRate": "The % of CAKE to burn each block.",
+						"_regularFarmRate": "The % of CAKE to regular pools each block.",
+						"_specialFarmRate": "The % of CAKE to special pools each block.",
+						"_withUpdate": "Whether call \"massUpdatePools\" operation."
+					}
+				},
+				"updatePool(uint256)": {
+					"params": {
+						"_pid": "The id of the pool. See `poolInfo`."
+					},
+					"returns": {
+						"pool": "Returns the pool that was updated."
+					}
+				},
+				"updateWhiteList(address,bool)": {
+					"params": {
+						"_isValid": "The flag for valid or invalid.",
+						"_user": "The address to be updated."
+					}
+				},
+				"withdraw(uint256,uint256)": {
+					"params": {
+						"_amount": "Amount of LP tokens to withdraw.",
+						"_pid": "The id of the pool. See `poolInfo`."
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"BOOST_PRECISION()": {
+					"notice": "Basic boost factor, none boosted user's boost factor"
+				},
+				"CAKE()": {
+					"notice": "Address of CAKE contract."
+				},
+				"CAKE_RATE_TOTAL_PRECISION()": {
+					"notice": "total cake rate = toBurn + toRegular + toSpecial"
+				},
+				"MASTERCHEF_CAKE_PER_BLOCK()": {
+					"notice": "40 cakes per block in MCV1"
+				},
+				"MASTER_CHEF()": {
+					"notice": "Address of MCV1 contract."
+				},
+				"MASTER_PID()": {
+					"notice": "The pool id of the MCV2 mock token pool in MCV1."
+				},
+				"MAX_BOOST_PRECISION()": {
+					"notice": "Hard limit for maxmium boost factor, it must greater than BOOST_PRECISION"
+				},
+				"add(uint256,address,bool,bool)": {
+					"notice": "Add a new pool. Can only be called by the owner. DO NOT add the same LP token more than once. Rewards will be messed up if you do."
+				},
+				"boostContract()": {
+					"notice": "The contract handles the share boosts."
+				},
+				"burnAdmin()": {
+					"notice": "The only address can withdraw all the burn CAKE."
+				},
+				"burnCake(bool)": {
+					"notice": "Send CAKE pending for burn to `burnAdmin`."
+				},
+				"cakePerBlock(bool)": {
+					"notice": "Calculates and returns the `amount` of CAKE per block."
+				},
+				"cakePerBlockToBurn()": {
+					"notice": "Calculates and returns the `amount` of CAKE per block to burn."
+				},
+				"cakeRateToBurn()": {
+					"notice": "The last block number of CAKE burn action being executed.CAKE distribute % for burn"
+				},
+				"cakeRateToRegularFarm()": {
+					"notice": "CAKE distribute % for regular farm pool"
+				},
+				"cakeRateToSpecialFarm()": {
+					"notice": "CAKE distribute % for special pools"
+				},
+				"deposit(uint256,uint256)": {
+					"notice": "Deposit LP tokens to pool."
+				},
+				"emergencyWithdraw(uint256)": {
+					"notice": "Withdraw without caring about the rewards. EMERGENCY ONLY."
+				},
+				"getBoostMultiplier(address,uint256)": {
+					"notice": "Get user boost multiplier for specific pool id."
+				},
+				"harvestFromMasterChef()": {
+					"notice": "Harvests CAKE from `MASTER_CHEF` MCV1 and pool `MASTER_PID` to MCV2."
+				},
+				"init(address)": {
+					"notice": "Deposits a dummy token to `MASTER_CHEF` MCV1. This is required because MCV1 holds the minting permission of CAKE. It will transfer all the `dummyToken` in the tx sender address. The allocation point for the dummy pool on MCV1 should be equal to the total amount of allocPoint."
+				},
+				"lpToken(uint256)": {
+					"notice": "Address of the LP token for each MCV2 pool."
+				},
+				"massUpdatePools()": {
+					"notice": "Update cake reward for all the active pools. Be careful of gas spending!"
+				},
+				"pendingCake(uint256,address)": {
+					"notice": "View function for checking pending CAKE rewards."
+				},
+				"poolInfo(uint256)": {
+					"notice": "Info of each MCV2 pool."
+				},
+				"poolLength()": {
+					"notice": "Returns the number of MCV2 pools."
+				},
+				"set(uint256,uint256,bool)": {
+					"notice": "Update the given pool's CAKE allocation point. Can only be called by the owner."
+				},
+				"totalRegularAllocPoint()": {
+					"notice": "Total regular allocation points. Must be the sum of all regular pools' allocation points."
+				},
+				"totalSpecialAllocPoint()": {
+					"notice": "Total special allocation points. Must be the sum of all special pools' allocation points."
+				},
+				"updateBoostContract(address)": {
+					"notice": "Update boost contract address and max boost factor."
+				},
+				"updateBoostMultiplier(address,uint256,uint256)": {
+					"notice": "Update user boost factor."
+				},
+				"updateBurnAdmin(address)": {
+					"notice": "Update burn admin address."
+				},
+				"updateCakeRate(uint256,uint256,uint256,bool)": {
+					"notice": "Update the % of CAKE distributions for burn, regular pools and special pools."
+				},
+				"updatePool(uint256)": {
+					"notice": "Update reward variables for the given pool."
+				},
+				"updateWhiteList(address,bool)": {
+					"notice": "Update whitelisted addresses for special pools."
+				},
+				"userInfo(uint256,address)": {
+					"notice": "Info of each pool user."
+				},
+				"whiteList(address)": {
+					"notice": "The whitelist of addresses allowed to deposit in special pools."
+				},
+				"withdraw(uint256,uint256)": {
+					"notice": "Withdraw LP tokens from pool."
+				}
+			},
+			"notice": "The (older) MasterChef contract gives out a constant number of CAKE tokens per block. It is the only address with minting rights for CAKE. The idea for this MasterChef V2 (MCV2) contract is therefore to be the owner of a dummy token that is deposited into the MasterChef V1 (MCV1) contract. The allocation point for this pool on MCV1 is the total allocation point for all pools that receive incentives.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Users/leilei/Downloads/MasterChefV2/MasterChefV2.sol": "MasterChefV2"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Users/leilei/Downloads/MasterChefV2/Address.sol": {
+			"keccak256": "0x42b040c5389fef91ea8637793e754d7c059a718275c9c12d6e21204b2a9b46e2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d192b621b224665760aa1ac8e9ac75c576f1f0480c889001eadd9c56b742928d",
+				"dweb:/ipfs/QmfZbQkahUYPjhKXMLjKQmqcTN7hWR8GiHqNqXCy7t43Tv"
+			]
+		},
+		"Users/leilei/Downloads/MasterChefV2/Context.sol": {
+			"keccak256": "0xb6232cf1921a36b072814b88b8508f2cf9890919fd9e678f1bdade789a0620cd",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3e8724a72d8e6c11ebd6ccb727e01ee7fa68895ece92207c08dba57be21a8088",
+				"dweb:/ipfs/QmaVZaBFmxmid2FYb6ERk5kPoNUij8xqyErUxDwhTLSryW"
+			]
+		},
+		"Users/leilei/Downloads/MasterChefV2/MasterChefV2.sol": {
+			"keccak256": "0x1b61cd8b4099457c5fe5e7826e7677b36e6e93405fb365462bae46345671c62f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://661db73b4867ded537e128ad992fc7dcf78350a8e1169f243b6a4dee467021d4",
+				"dweb:/ipfs/Qmb8evyXsnLerisANuHrEkxV9To5hvVFpDPXb3gcEoe5KF"
+			]
+		},
+		"Users/leilei/Downloads/MasterChefV2/Ownable.sol": {
+			"keccak256": "0x4a76e0ca0f221c1ea4f5811592c6c872ef34fa070c6991f77cf19ddd9045ce28",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2739153ad67e939c3b22636fd31be2fe5d7864650f293d7eceeb611ea2e2a4fa",
+				"dweb:/ipfs/QmeiiQtcq5X4khkSb6BUsG1ySwBJMeci3mkehqKBgTTjtp"
+			]
+		},
+		"Users/leilei/Downloads/MasterChefV2/ReentrancyGuard.sol": {
+			"keccak256": "0xf2a1c1864b2f16d88b3340d19d306087233024084c4c28b39072459ddb27e84e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://779e59d97f433fd6bea7c3e0107fe1d83e96872360ed1f57df85d3eaf05ccba6",
+				"dweb:/ipfs/QmPVJ4cPNyHtVci7swAsQELz5vERViR597D3Ata1D7gE3D"
+			]
+		},
+		"Users/leilei/Downloads/MasterChefV2/SafeBEP20.sol": {
+			"keccak256": "0x19f4c9cfd5591d9a128be492b1e39db85db819ebd41dac0335d8826af33e24fc",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ec73b52baad0f496f58da064772cf12d861b7e8ebc57bbdfd8443ad4df7cf2eb",
+				"dweb:/ipfs/QmVVL4DSndT6xfksxSaEqQ2dbfEFH8YkqaEScEqhbJP7R4"
+			]
+		},
+		"Users/leilei/Downloads/MasterChefV2/SafeMath.sol": {
+			"keccak256": "0x2e1df665169560627c2a0dce65572e63de974bb41c759cdeed973cd570b4d7cf",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0785d9859de8fd9d90e10e085500fd9aceebd71bbb018f7959b5bd4de5759878",
+				"dweb:/ipfs/QmPC3ockcg49rizy1DJiBErQLsH4FR7W4KRfcoxEMFAgPS"
+			]
+		},
+		"Users/leilei/Downloads/MasterChefV2/interfaces/IBEP20.sol": {
+			"keccak256": "0x21e17839b929da845c6196ac3cbdf2e7b878b916fbe05b35ad94d4c9b3f5b09e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3c10cfe172c74c4a790cd67f5afb19f218a2d669ba1ee255932499abfccf08e9",
+				"dweb:/ipfs/QmUKAgVM9isTbuqc4boAqgZss2u3UzE7UaV4AvgjSdKhog"
+			]
+		},
+		"Users/leilei/Downloads/MasterChefV2/interfaces/IMasterChef.sol": {
+			"keccak256": "0x04dd26824c4dac1ab2d111d8c2a0b779a5e92891693cdbdc169832628f7d150d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c22b07b9cbe7cf6175ce573d2c1110b126c57ed9d507971e325103206c3e91cc",
+				"dweb:/ipfs/QmUMLUacnkhFB9mnZJNMWm487EzT9XgQdZRFutoLvXy6sZ"
+			]
+		}
+	},
+	"version": 1
+}
