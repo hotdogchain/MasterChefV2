@@ -1,25 +1,21 @@
 {
 	"compiler": {
-		"version": "0.8.4+commit.c7e474f2"
+		"version": "0.6.4+commit.1dca32f3"
 	},
 	"language": "Solidity",
 	"output": {
 		"abi": [],
 		"devdoc": {
 			"details": "Collection of functions related to the address type",
-			"kind": "dev",
-			"methods": {},
-			"version": 1
+			"methods": {}
 		},
 		"userdoc": {
-			"kind": "user",
-			"methods": {},
-			"version": 1
+			"methods": {}
 		}
 	},
 	"settings": {
 		"compilationTarget": {
-			"Users/leilei/Downloads/MasterChefV2/contracts/PancakeSwapLottery.sol": "Address"
+			"Users/leilei/Downloads/MasterChefV2/contracts/PancakeProfile.sol": "Address"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -33,12 +29,11 @@
 		"remappings": []
 	},
 	"sources": {
-		"Users/leilei/Downloads/MasterChefV2/contracts/PancakeSwapLottery.sol": {
-			"keccak256": "0x796769651b1a646b7549f520045bb86a891e399341e0504b3938bc941ab29ac4",
-			"license": "MIT",
+		"Users/leilei/Downloads/MasterChefV2/contracts/PancakeProfile.sol": {
+			"keccak256": "0xf31e4573fb10e3e61b167a4c330b304f203a67db691c756e767cc339ea8ee027",
 			"urls": [
-				"bzz-raw://dfed1478b0aa99052f7b97ab8c491b1e2a877e0f6767c782daad1d526f251acb",
-				"dweb:/ipfs/QmdrWBQREAFTG2GMCbxdTwfaYSW3gLfmu4r8zTErN8Dve8"
+				"bzz-raw://6c51c650151db066455dcb3a5c212f77b3a2785f90c1e6d6f54bf03d9250d8aa",
+				"dweb:/ipfs/QmdL7Na8fVGBH4vs6yov4L9D3rEsd1SuLjQrGahEWrXv8E"
 			]
 		}
 	},

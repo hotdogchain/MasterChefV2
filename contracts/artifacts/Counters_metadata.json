@@ -6,8 +6,10 @@
 	"output": {
 		"abi": [],
 		"devdoc": {
-			"details": "Wrappers over Solidity's arithmetic operations with added overflow checks. * Arithmetic operations in Solidity wrap on overflow. This can easily result in bugs, because programmers usually assume that an overflow raises an error, which is the standard behavior in high level programming languages. `SafeMath` restores this intuition by reverting the transaction when an operation overflows. * Using this library instead of the unchecked operations eliminates an entire class of bugs, so it's recommended to use it always.",
-			"methods": {}
+			"author": "Matt Condon (@shrugs)",
+			"details": "Provides counters that can only be incremented or decremented by one. This can be used e.g. to track the number of elements in a mapping, issuing ERC721 ids, or counting request ids. * Include with `using Counters for Counters.Counter;` Since it is not possible to overflow a 256 bit integer with increments of one, `increment` can skip the {SafeMath} overflow check, thereby saving gas. This does assume however correct usage, in that the underlying `_value` is never directly accessed.",
+			"methods": {},
+			"title": "Counters"
 		},
 		"userdoc": {
 			"methods": {}
@@ -15,7 +17,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Users/leilei/Downloads/MasterChefV2/contracts/PancakeProfile.sol": "SafeMath"
+			"Users/leilei/Downloads/MasterChefV2/contracts/PancakeProfile.sol": "Counters"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
